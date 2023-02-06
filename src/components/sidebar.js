@@ -1,7 +1,7 @@
 import React from 'react';
 import {  signOut } from "firebase/auth";
 import auth from '../utils/firebase';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate, useLocation, NavLink } from 'react-router-dom';
 
 const Sidebar = () => {
 	const navigate = useNavigate();

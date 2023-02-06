@@ -8,6 +8,7 @@ import Receipt from "./pages/Receipt";
 import LoginForm from './pages/Login';
 import PrivateRoute from './components/auth/PrivateRoute';
 import Signup from './pages/Signup';
+import SingleRoute from './pages/SingleRoute';
 
 const App = () => {
   
@@ -33,6 +34,12 @@ const App = () => {
       <Route path="/routes" element={
          <PrivateRoute>
            <AppRoute />
+          </PrivateRoute>
+      } />
+
+      <Route path="routes/:id" element={
+         <PrivateRoute>
+           <SingleRoute />
           </PrivateRoute>
       } />
 
