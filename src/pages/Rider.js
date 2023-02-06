@@ -7,7 +7,7 @@ const Rider = () => {
     <div>
      <Layout>
         <main>
-          <div class="head-title">
+          <div className="head-title">
 				
 			</div>
 			<ul>
@@ -36,13 +36,13 @@ const Rider = () => {
 				 </li>
 			</ul>
 
-			<ul class="box-info">
+			<ul className="box-info">
 				
 				
 			</ul>
-        <div class="table-data">
-				<div class="order">
-					<div class="head">
+        <div className="table-data">
+				<div className="order">
+					<div className="head">
 						<h3>Registered Students</h3>
 						
 					</div>
