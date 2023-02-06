@@ -6,18 +6,48 @@ import AppRoute from "./pages/AppRoute";
 import Fares from "./pages/Fares";
 import Receipt from "./pages/Receipt";
 import LoginForm from './pages/Login';
-
+import PrivateRoute from './components/auth/PrivateRoute';
+import Signup from './pages/Signup';
 
 const App = () => {
+  
+
+
   return <BrowserRouter>
     <Routes>
-      <Route path="/" element={<Rider />} />
-      <Route path="/rider" element={<Rider />} />
-      <Route path="/driver" exact element={<Driver />} />
-      <Route path="/app-route" element={<AppRoute />} />
-      <Route path="/fares" element={<Fares />} />
-      <Route path="/receipt" element={<Receipt />} />
-       <Route path="/login" element={<LoginForm />} />
+      <Route path="/" element={<LoginForm />} />
+      <Route path="/signup" element={<Signup/>}/>
+    
+      <Route path="/rider" element={
+        <PrivateRoute>
+          <Rider />
+          </PrivateRoute>
+      }/>
+     
+      <Route path="/driver" element={
+         <PrivateRoute>
+           <Driver />
+          </PrivateRoute>
+      } />
+
+      <Route path="/routes" element={
+         <PrivateRoute>
+           <AppRoute />
+          </PrivateRoute>
+      } />
+
+      <Route path="/fares" element={
+         <PrivateRoute>
+           <Fares />
+          </PrivateRoute>
+      } />
+
+      <Route path="/receipt" element={
+         <PrivateRoute>
+           <Receipt />
+          </PrivateRoute>
+      } />
+
     </Routes>
   </BrowserRouter>;
     

@@ -1,50 +1,67 @@
-import React from 'react'
+import React from 'react';
+import {  signOut } from "firebase/auth";
+import auth from '../utils/firebase';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 const Sidebar = () => {
+	const navigate = useNavigate();
+	const location = useLocation();
+
+	const handleLogout = (e) => {    
+		e.preventDefault();
+		signOut(auth).then(() => {
+			navigate("/");
+			console.log("Signed out successfully")
+		}).catch((error) => {
+		});
+	}
+
+	const { pathname } = location
+
   return (
     <div>
 	<section id="sidebar">
-		<a href="/" class="brand">
-			<i class='bx bxs-smile'></i>
-			<span class="text">Rite Way</span>
+		<a href="/" className="brand">
+			<i className='bx bxs-smile'></i>
+			<span className="text">Rite Way</span>
 		</a>
-		<ul class="side-menu top">
-			<li class="active">
+		<ul className="side-menu top">
+			<li className={pathname === '/rider'? 'active' : ''}>
 				<a href="/rider">
-					<i class='bx bxs-dashboard' ></i>
-					<span class="text">Riders</span>
+					<i className='bx bxs-dashboard' ></i>
+					<span className="text">Riders</span>
 				</a>
 			</li>
-			<li>
+			<li className={pathname === '/driver'? 'active' : ''}>
 				<a href="/driver">
-					<i class='bx bxs-shopping-bag-alt' ></i>
-					<span class="text">Drivers</span>
+					<i className='bx bxs-shopping-bag-alt' ></i>
+					<span className="text">Drivers</span>
 				</a>
 			</li>
-			<li>
-				<a href="/app-route">
-					<i class='bx bxs-doughnut-chart' ></i>
-					<span class="text">Routes</span>
+			<li className={pathname === '/routes'? 'active' : ''}>
+				<a href="/routes">
+					<i className='bx bxs-doughnut-chart' ></i>
+					<span className="text">Routes</span>
 				</a>
 			</li>
-			<li>
+			<li className={pathname === '/fares'? 'active' : ''}>
 				<a href="/fares">
-					<i class='bx bxs-message-dots' ></i>
-					<span class="text">Fares</span>
+					<i className='bx bxs-message-dots' ></i>
+					<span className="text">Fares</span>
 				</a>
 			</li>
-			<li>
+			<li className={pathname === '/receipt'? 'active' : ''}>
 				<a href="/receipt">
-					<i class='bx bxs-message-dots'></i>
-					<span class="text">Receipts</span>
+					<i className='bx bxs-message-dots'></i>
+					<span className="text">Receipts</span>
 				</a>
 			</li>
 		</ul>
-		<ul class="side-menu">
+		<ul className="side-menu">
 			<li>
-				<a href="#" class="logout">
-					<i class='bx bxs-log-out-circle' ></i>
-					<span class="text">Logout</span>
+				<a href="#" onClick={handleLogout} className="logout">
+					<i className='bx bxs-log-out-circle' ></i>
+					<span className="text">Logout</span>
 				</a>
 			</li>
 		</ul>
