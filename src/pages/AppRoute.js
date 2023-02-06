@@ -13,7 +13,10 @@ const AppRoute = () => {
     const sampleRoutes = [
       { id: 1, name: "Route 1", fare: 10 },
       { id: 2, name: "Route 2", fare: 20 },
-      { id: 3, name: "Route 3", fare: 30 }
+      { id: 3, name: "Route 3", fare: 30 },
+      { id: 4, name: "Route 4", fare: 30 },
+      { id: 5, name: "Route 5", fare: 30 },
+      { id: 6, name: "Route 6", fare: 30 },
     ];
     setRoutes(sampleRoutes);
   }, []);
