@@ -8,7 +8,6 @@ const Rider = () => {
      <Layout>
         <main>
           <div className="head-title">
-				
 			</div>
 			<ul>
 				<li>
@@ -43,7 +42,7 @@ const Rider = () => {
         <div className="table-data">
 				<div className="order">
 					<div className="head">
-						<h3>Registered Students</h3>
+						<h3>Registered Riders</h3>
 						
 					</div>
 					<table>

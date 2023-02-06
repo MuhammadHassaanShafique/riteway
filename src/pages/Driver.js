@@ -42,7 +42,7 @@ const Driver = () => {
         <div className="table-data">
 				<div className="order">
 					<div className="head">
-						<h3>Registered Students</h3>
+						<h3>Registered Drivers</h3>
 						
 					</div>
 					<table>

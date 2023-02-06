@@ -3,7 +3,7 @@ import Layout from '../components/layout'
 const Fares = () => {
   
       return (
-    <Layout>Untitled-1</Layout>
+    <Layout></Layout>
   )
     
 
