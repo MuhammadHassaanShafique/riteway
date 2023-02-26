@@ -11,26 +11,26 @@ const SingleRoute = () => {
     { 
       routeId : 1, 
       route :  [
-        { id: 1, name: "Cust", fare: 10 },
-        { id: 2, name: "River Garden", fare: 20 },
-        { id: 3, name: "PWD", fare: 30 }
+        { id: 1, name: "Cust", fare: "Starting point" },
+        { id: 2, name: "River Garden", fare: 20000 },
+        { id: 3, name: "PWD", fare: 25000 }
       ]
     },
     { 
       routeId : 2, 
       route :  [
-        { id: 1, name: "Cust", fare: 10 },
-        { id: 2, name: "Model Town", fare: 20 },
-        { id: 3, name: "Bahria Town", fare: 30 }
+        { id: 1, name: "Cust", fare: "Starting point" },
+        { id: 2, name: "Model Town", fare: 15000 },
+        { id: 3, name: "Bahria Town", fare: 20000 }
       ]
     },
     { 
       routeId : 3, 
       route :  [
-        { id: 1, name: "Cust", fare: 10 },
-        { id: 2, name: "Khanapul", fare: 20 },
-        { id: 3, name: "Ghori Town", fare: 30 },
-        { id: 4, name: "I-8", fare: 30 }
+        { id: 1, name: "Cust", fare: "Starting point" },
+        { id: 2, name: "Khanapul", fare: 35000 },
+        { id: 3, name: "Ghori Town", fare: 40000 },
+        { id: 4, name: "I-8", fare: 45000 }
       ]
     },
   ];

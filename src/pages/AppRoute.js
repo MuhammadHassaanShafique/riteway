@@ -9,14 +9,14 @@ const AppRoute = () => {
   const [routes, setRoutes] = useState([]);
 
   useEffect(() => {
-    // replace this with your code to fetch the routes from Firebase
+    // replace this with  code to fetch the routes from Firebase
     const sampleRoutes = [
-      { id: 1, name: "Route 1", fare: 10 },
-      { id: 2, name: "Route 2", fare: 20 },
-      { id: 3, name: "Route 3", fare: 30 },
-      { id: 4, name: "Route 4", fare: 30 },
-      { id: 5, name: "Route 5", fare: 30 },
-      { id: 6, name: "Route 6", fare: 30 },
+      { id: 1, name: "Route 1", fare: "Click on Route 1" },
+      { id: 2, name: "Route 2", fare:  "Click on Route 2"},
+      { id: 3, name: "Route 3", fare: "Click on Route 3"},
+      { id: 4, name: "Route 4", fare: "Click on Route 4" },
+      { id: 5, name: "Route 5", fare: "Click on Route 5" },
+      { id: 6, name: "Route 6", fare: "Click on Route 6" },
     ];
     setRoutes(sampleRoutes);
   }, []);
