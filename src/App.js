@@ -9,16 +9,15 @@ import LoginForm from './pages/Login';
 import PrivateRoute from './components/auth/PrivateRoute';
 import Signup from './pages/Signup';
 import SingleRoute from './pages/SingleRoute';
+import Loader from './components/SharedComponents/Loader';
 
 const App = () => {
-  
-
 
   return <BrowserRouter>
     <Routes>
       <Route path="/" element={<LoginForm />} />
       <Route path="/signup" element={<Signup/>}/>
-    
+    <Route path="/loader" element={<Loader/>}/>
       <Route path="/rider" element={
         <PrivateRoute>
           <Rider />
