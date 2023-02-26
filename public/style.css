@@ -46,10 +46,6 @@ body {
 	overflow-x: hidden;
 }
 
-
-
-
-
 /* SIDEBAR */
 #sidebar {
 	position: fixed;
@@ -64,6 +60,11 @@ body {
 	overflow-x: hidden;
 	scrollbar-width: none;
 }
+
+#sidebar .bottom {
+	margin-top: 0px !important;
+}
+
 #sidebar::--webkit-scrollbar {
 	display: none;
 }
@@ -157,6 +158,7 @@ body {
 	display: flex;
 	justify-content: center;
 }
+
 /* SIDEBAR */
 
 
@@ -356,7 +358,25 @@ body {
 	font-weight: 500;
 }
 
+.loader {
+	border: 2px solid #f3f3f3;
+	border-top: 2px solid #3498db;
+	border-radius: 50%;
+	width:20px;
+	height: 20px;
+	animation: spin 2s linear infinite;
+}
 
+.loadingButton {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+@keyframes spin {
+	0% {transform: rotate(0deg)}
+	100% {transform: rotate(360deg)}
+}
 
 
 #content main .box-info {
@@ -552,7 +572,7 @@ input {
 }
 
 /* Set a style for all buttons */
-button {
+.button {
 	background-color: #04AA6D;
 	color: white;
 	padding: 14px 20px;
@@ -560,6 +580,27 @@ button {
 	border: none;
 	cursor: pointer;
 	width: 100%;
+}
+
+.routeButton {
+	color: white;
+	padding: 14px 20px;
+	margin: 8px 0;
+	border: none;
+	cursor: pointer;
+	border-radius: 10px;
+}
+
+.success {
+	background-color: #04AA6D;
+}
+.danger {
+	background-color: #eb0303;
+}
+
+.actions {
+	display: flex;
+	gap: 5px;
 }
 
 /* Add a hover effect for buttons */

@@ -14,11 +14,13 @@ const firebaseConfig = {
 
 
 let auth
+let app
 try {
-    const app = initializeApp(firebaseConfig);
+    app = initializeApp(firebaseConfig);
     auth = getAuth(app);
 } catch(error) {
     console.log('Error:', error)
 }
 
+export const db = getFirestore(app);
 export default auth 

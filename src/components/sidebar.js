@@ -44,12 +44,6 @@ const Sidebar = () => {
 					<span className="text">Routes</span>
 				</a>
 			</li>
-			<li className={pathname === '/fares'? 'active' : ''}>
-				<a href="/fares">
-					<i className='bx bxs-message-dots' ></i>
-					<span className="text">Fares</span>
-				</a>
-			</li>
 			<li className={pathname === '/receipt'? 'active' : ''}>
 				<a href="/receipt">
 					<i className='bx bxs-message-dots'></i>
@@ -57,7 +51,7 @@ const Sidebar = () => {
 				</a>
 			</li>
 		</ul>
-		<ul className="side-menu">
+		<ul className="side-menu bottom">
 			<li>
 				<a href="#" onClick={handleLogout} className="logout">
 					<i className='bx bxs-log-out-circle' ></i>
