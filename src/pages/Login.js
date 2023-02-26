@@ -3,11 +3,13 @@ import {  signInWithEmailAndPassword  } from 'firebase/auth';
 import { useNavigate } from "react-router";
 import auth from '../utils/firebase'
 import { NavLink } from "react-router-dom";
+import Loader from "../components/SharedComponents/Loader";
 
 const LoginForm = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
   const handleSubmit = async (event) => {
@@ -18,11 +20,13 @@ const LoginForm = () => {
     }
   
     try {
+      setLoading(true)
       const res = await signInWithEmailAndPassword(auth, email, password);
       if(res.user){
         const token = res.user.accessToken;
         if (token) {
           localStorage.setItem('AccessToken',token)
+          setLoading(false)
           navigate("/rider")
         } else {
           console.log('Not logged in')
@@ -53,16 +57,22 @@ const LoginForm = () => {
             value={password}
             onChange={event => setPassword(event.target.value)}
           />
-          <button type="submit">Login</button>
+            <button 
+              type="submit" 
+              disabled={loading} 
+              className="loadingButton button"
+            >
+          {loading ? <Loader />:"Login" }
+          </button>
           {errorMessage && <div>{errorMessage}</div>}
           </form>
       </div>
       <p>
-                Create an account{' '}
-                <NavLink to="/signup" >
-                    Sign up
-                </NavLink>
-            </p> 
+          Create an account{' '}
+          <NavLink to="/signup" >
+              Sign up
+          </NavLink>
+      </p> 
     </div>
   );
 };

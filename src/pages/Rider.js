@@ -50,22 +50,66 @@ const Rider = () => {
 							<tr>
 								<th>User</th>
 								<th>Date </th>
+								<th>Phone no </th>
+								<th>CNIC no </th>
+								
+								
 							</tr>
 						</thead>
 						<tbody>
 							<tr>
 								<td>
 									<img src="img/people.png" />
-									<p>Sami pepsi</p>
+									<p>Muhammad Sami </p>
 								</td>
 								<td>01-10-2022</td>
+								<td>03321000000</td>
+								<td>1000000</td>
 							</tr>
 							<tr>
 								<td>
 									<img src="img/people.png" />
-									<p>Hassaan</p>
+									<p>Muhammad Hassaan</p>
 								</td>
 								<td>01-10-2022</td>
+								<td>03321000000</td>
+								<td>1000000</td>
+							</tr>
+							<tr>
+								<td>
+									<img src="img/people.png" />
+									<p>Muhammad Hassaan</p>
+								</td>
+								<td>01-10-2022</td>
+								<td>03321000000</td>
+								<td>1000000</td>
+							</tr>
+							<tr>
+								<td>
+									<img src="img/people.png" />
+									<p>Muhammad Hassaan</p>
+								</td>
+								<td>01-10-2022</td>
+								<td>03321000000</td>
+								<td>1000000</td>
+							</tr>
+							<tr>
+								<td>
+									<img src="img/people.png" />
+									<p>Muhammad Hassaan</p>
+								</td>
+								<td>01-10-2022</td>
+								<td>03321000000</td>
+								<td>1000000</td>
+							</tr>
+							<tr>
+								<td>
+									<img src="img/people.png" />
+									<p>Muhammad Hassaan</p>
+								</td>
+								<td>01-10-2022</td>
+								<td>03321000000</td>
+								<td>1000000</td>
 							</tr>
 						</tbody>
 					</table>
