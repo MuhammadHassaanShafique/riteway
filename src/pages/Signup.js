@@ -15,7 +15,7 @@ const Signup = () => {
      setLoading(true)
       await createUserWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
-            const user = userCredential.user;
+            // const user = userCredential.user;
             setLoading(false)
             navigate("/")
         })
@@ -28,7 +28,7 @@ const Signup = () => {
  
   return (
         <div className='wrapper'>                  
-            <img src="/img/logo.jpeg" className="img-logo"/>                                                              
+            <img src="/img/logo.jpeg" alt='logo' className="img-logo"/>                                                              
             <form>                                                                                            
                 <div>
                     <label htmlFor="email-address">
