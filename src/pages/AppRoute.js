@@ -10,7 +10,6 @@ import {
     deleteDoc,
     doc,
     getDocs,
-    updateDoc,
 } from "firebase/firestore";
 import Loader from "./../components/SharedComponents/Loader/large";
 import Modal from "./../components/modal/index";
@@ -26,11 +25,11 @@ const AppRoute = () => {
         await addDoc(routesCollectionRef, { name: newName });
     };
 
-    const updateRoute = async (id, age) => {
-        const routeDoc = doc(db, "routes", id);
-        const newFields = { age: age + 1 };
-        await updateDoc(routeDoc, newFields);
-    };
+    // const updateRoute = async (id, age) => {
+    //     const routeDoc = doc(db, "routes", id);
+    //     const newFields = { age: age + 1 };
+    //     await updateDoc(routeDoc, newFields);
+    // };
 
     const deleteRoute = async (id) => {
         const routeDoc = doc(db, "routes", id);
