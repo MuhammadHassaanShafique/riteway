@@ -58,7 +58,7 @@ const Driver = () => {
 						<tbody>
 							<tr>
 								<td>
-									<img src="img/people.png" />
+									<img src="img/people.png"  alt="people"/>
 									<p>Muhammad sami </p>
 								</td>
 								<td>ARZ-1001</td>
@@ -68,7 +68,7 @@ const Driver = () => {
 							</tr>
 							<tr>
 								<td>
-									<img src="img/people.png" />
+									<img src="img/people.png"  alt="people"/>
 									<p>Muhammad umair </p>
 								</td>
 								<td>ABD-6565</td>
@@ -79,7 +79,7 @@ const Driver = () => {
 							
 							<tr>
 								<td>
-									<img src="img/people.png" />
+									<img src="img/people.png"  alt="people"/>
 									<p> M Hassaan Shafique</p>
 								</td>
 								<td>GFD-2873</td>
@@ -89,7 +89,7 @@ const Driver = () => {
 							</tr>
 							<tr>
 								<td>
-									<img src="img/people.png" />
+									<img src="img/people.png" alt="people" />
 									<p> M Hassaan Shafique</p>
 								</td>
 								<td>XSA-1231</td>
@@ -99,7 +99,7 @@ const Driver = () => {
 							</tr>
 							<tr>
 								<td>
-									<img src="img/people.png" />
+									<img src="img/people.png" alt="people" />
 									<p> M Hassaan Shafique</p>
 								</td>
 								<td>AVQ-1993</td>

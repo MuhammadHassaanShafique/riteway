@@ -10,52 +10,78 @@ import PrivateRoute from './components/auth/PrivateRoute';
 import Signup from './pages/Signup';
 import SingleRoute from './pages/SingleRoute';
 import Loader from './components/SharedComponents/Loader';
+// import { ToastContainer } from "react-toastify";
 
 const App = () => {
 
-  return <BrowserRouter>
-    <Routes>
-      <Route path="/" element={<LoginForm />} />
-      <Route path="/signup" element={<Signup/>}/>
-    <Route path="/loader" element={<Loader/>}/>
-      <Route path="/rider" element={
-        <PrivateRoute>
-          <Rider />
-          </PrivateRoute>
-      }/>
-     
-      <Route path="/driver" element={
-         <PrivateRoute>
-           <Driver />
-          </PrivateRoute>
-      } />
+  return (
+      <BrowserRouter>
+          {/* <ToastContainer
+              position="top-right"
+              hideProgressBar
+              pauseOnHover
+              autoClose={5000}
+          /> */}
+          <Routes>
+              <Route path="/" element={<LoginForm />} />
+              <Route path="/signup" element={<Signup />} />
+              <Route path="/loader" element={<Loader />} />
+              <Route
+                  path="/rider"
+                  element={
+                      <PrivateRoute>
+                          <Rider />
+                      </PrivateRoute>
+                  }
+              />
 
-      <Route path="/routes" element={
-         <PrivateRoute>
-           <AppRoute />
-          </PrivateRoute>
-      } />
+              <Route
+                  path="/driver"
+                  element={
+                      <PrivateRoute>
+                          <Driver />
+                      </PrivateRoute>
+                  }
+              />
 
-      <Route path="routes/:id" element={
-         <PrivateRoute>
-           <SingleRoute />
-          </PrivateRoute>
-      } />
+              <Route
+                  path="/routes"
+                  element={
+                      <PrivateRoute>
+                          <AppRoute />
+                      </PrivateRoute>
+                  }
+              />
 
-      <Route path="/fares" element={
-         <PrivateRoute>
-           <Fares />
-          </PrivateRoute>
-      } />
+              <Route
+                  path="routes/:id"
+                  element={
+                      <PrivateRoute>
+                          <SingleRoute />
+                      </PrivateRoute>
+                  }
+              />
 
-      <Route path="/receipt" element={
-         <PrivateRoute>
-           <Receipt />
-          </PrivateRoute>
-      } />
+              <Route
+                  path="/fares"
+                  element={
+                      <PrivateRoute>
+                          <Fares />
+                      </PrivateRoute>
+                  }
+              />
 
-    </Routes>
-  </BrowserRouter>;
+              <Route
+                  path="/receipt"
+                  element={
+                      <PrivateRoute>
+                          <Receipt />
+                      </PrivateRoute>
+                  }
+              />
+          </Routes>
+      </BrowserRouter>
+  );
     
   
 }
