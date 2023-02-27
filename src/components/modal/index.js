@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { useNavigate } from 'react-router-dom';
 import Loader from './../SharedComponents/Loader/index';
 
 
@@ -7,7 +6,7 @@ const Modal = ({ createRoute, setShowModal, setRefresh }) => {
     const [routeValue, setRouteValue] = useState("");
     const [errorMessage, setErrorMessage] = useState("");
     const [loading, setLoading] = useState(false);
-    const navigate = useNavigate();
+    
 
     const handleSubmit = async (event) => {
         event.preventDefault();

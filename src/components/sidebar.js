@@ -1,7 +1,8 @@
 import React from 'react';
 import {  signOut } from "firebase/auth";
 import auth from '../utils/firebase';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate, useLocation, Link } from 'react-router-dom';
+
 
 const Sidebar = () => {
 	const navigate = useNavigate();
@@ -21,42 +22,42 @@ const Sidebar = () => {
   return (
       <div>
           <section id="sidebar">
-              <a href="/" className="brand">
+              <Link to="/" className="brand">
                   <i className="bx bxs-smile"></i>
                   <span className="text">Rite Way</span>
-              </a>
+              </Link>
               <ul className="side-menu top">
                   <li className={pathname === "/rider" ? "active" : ""}>
-                      <a href="/rider">
+                      <Link to="/rider">
                           <i className="bx bxs-dashboard"></i>
                           <span className="text">Riders</span>
-                      </a>
+                      </Link>
                   </li>
                   <li className={pathname === "/driver" ? "active" : ""}>
-                      <a href="/driver">
+                      <Link to="/driver">
                           <i className="bx bxs-shopping-bag-alt"></i>
                           <span className="text">Drivers</span>
-                      </a>
+                      </Link>
                   </li>
                   <li className={pathname === "/routes" ? "active" : ""}>
-                      <a href="/routes">
+                      <Link to="/routes">
                           <i className="bx bxs-doughnut-chart"></i>
                           <span className="text">Routes</span>
-                      </a>
+                      </Link>
                   </li>
                   <li className={pathname === "/receipt" ? "active" : ""}>
-                      <a href="/receipt">
+                      <Link to="/receipt">
                           <i className="bx bxs-message-dots"></i>
                           <span className="text">Receipts</span>
-                      </a>
+                      </Link>
                   </li>
               </ul>
               <ul className="side-menu bottom">
                   <li>
-                      <a href={"#"} onClick={handleLogout} className="logout">
+                      <Link to={"#"} onClick={handleLogout} className="logout">
                           <i className="bx bxs-log-out-circle"></i>
                           <span className="text">Logout</span>
-                      </a>
+                      </Link>
                   </li>
               </ul>
           </section>
