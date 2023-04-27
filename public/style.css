@@ -442,8 +442,6 @@ body {
 
 
 
-
-
 #content main .table-data {
 	display: flex;
 	flex-wrap: wrap;
@@ -606,6 +604,28 @@ input {
 	width: 100%;
 }
 
+.routePointsForm {
+	border-top: 1px dotted black;
+	border-bottom: 1px dotted black;
+	padding: 20px;
+	height: 400px;
+	overflow-y: scroll;
+	margin-bottom: 10px;
+	margin-top: 10px;
+}
+
+.addMoreBtn {
+	background-color: #03c0bc;
+	color: white;
+	padding: 14px 20px;
+	margin: 8px 0;
+	border: none;
+	cursor: pointer;
+	width: 30%;
+	float: right;
+	border-radius: 20px;
+}
+
 .routeButton {
 	color: white;
 	padding: 14px 20px;
@@ -613,6 +633,15 @@ input {
 	border: none;
 	cursor: pointer;
 	border-radius: 10px;
+}
+
+                           
+.error {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: red;
+	font-weight: bold;
 }
 
 .success {
@@ -759,7 +788,7 @@ span.psw {
 	padding: 20px;
 	border: 1px solid #888;
 		width: 470px;
-			height: 280px;
+			
 			border-radius: 20px;
 }
 

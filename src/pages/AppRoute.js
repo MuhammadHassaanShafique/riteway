@@ -21,8 +21,8 @@ const AppRoute = () => {
     const [showModal, setShowModal] = useState(false);
     const [refresh, setRefresh] = useState(false);
 
-    const createRoute = async (newName) => {
-        await addDoc(routesCollectionRef, { name: newName });
+    const createRoute = async (data) => {
+        await addDoc(routesCollectionRef, data);
     };
 
     // const updateRoute = async (id, age) => {
@@ -82,6 +82,7 @@ const AppRoute = () => {
                                         <tr>
                                             <th>ID</th>
                                             <th>Name </th>
+                                            <th>Fare </th>
                                             <th>Actions</th>
                                         </tr>
                                     </thead>
@@ -98,11 +99,14 @@ const AppRoute = () => {
                                                         {route.name}{" "}
                                                     </NavLink>{" "}
                                                 </td>
+                                                <td>
+                                                    {route.fare}
+                                                </td>
 
                                                 <td className="actions">
-                                                    <button className="routeButton success">
+                                                    {/* <button className="routeButton success">
                                                         Edit
-                                                    </button>
+                                                    </button> */}
                                                     <button
                                                         className="routeButton danger"
                                                         onClick={() => {

@@ -1,120 +1,125 @@
-import React from 'react'
-import Layout from '../components/layout'
+import React, { useCallback, useEffect, useState } from 'react';
+import Layout from '../components/layout';
+import appController from '../services/appController';
+import ImageViewer from 'react-simple-image-viewer';
+import Loader from '../components/SharedComponents/Loader';
 
 const Driver = () => {
-  return (
-    <div>
-      <Layout>
-        <main>
-          <div className="head-title">
-				
-			</div>
-			<ul>
-				<li>
-				<link to="/Driver"></link>
-				 </li>
-			</ul>
-			<ul>
-				<li>
-				<link to="/Rider"></link>
-				 </li>
-			</ul>
-			<ul>
-				<li>
-				<link to="/Routes"></link>
-				 </li>
-			</ul>
-			<ul>
-				<li>
-				<link to="/Fares"></link>
-				 </li>
-			</ul>
-			<ul>
-				<li>
-				<link to="/Receipt"></link>
-				 </li>
-			</ul>
+    const [loading, setLoading] = useState(false);
+    const [drivers, setDrivers] = useState([]);
+    const [currentImage, setCurrentImage] = useState(0);
+    const [isViewerOpen, setIsViewerOpen] = useState(false);
+    const [images, setImages] = useState([]);
 
-			<ul className="box-info">
-				
-				
-			</ul>
-        <div className="table-data">
-				<div className="order">
-					<div className="head">
-						<h3>Registered Drivers</h3>
-						
-					</div>
-					<table>
-						<thead>
-							<tr>
-								<th>DRIVER</th>
-								<th>Vehicle No </th>
-								<th>Phone no</th>
-								<th>Allocated Route</th>
-								<th>license no</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>
-									<img src="img/people.png"  alt="people"/>
-									<p>Muhammad sami </p>
-								</td>
-								<td>ARZ-1001</td>
-								<td>0332100000</td>
-								<td>Route 3</td>
-								<td>12345</td>
-							</tr>
-							<tr>
-								<td>
-									<img src="img/people.png"  alt="people"/>
-									<p>Muhammad umair </p>
-								</td>
-								<td>ABD-6565</td>
-								<td>03211000000</td>
-								<td>Route 2</td>
-								<td>12345</td>
-							</tr>
-							
-							<tr>
-								<td>
-									<img src="img/people.png"  alt="people"/>
-									<p> M Hassaan Shafique</p>
-								</td>
-								<td>GFD-2873</td>
-								<td>0325111111</td>
-								<td>Route 6</td>
-								<td>12345</td>
-							</tr>
-							<tr>
-								<td>
-									<img src="img/people.png" alt="people" />
-									<p> M Hassaan Shafique</p>
-								</td>
-								<td>XSA-1231</td>
-								<td>0325111111</td>
-								<td>Route 5</td>
-								<td>12345</td>
-							</tr>
-							<tr>
-								<td>
-									<img src="img/people.png" alt="people" />
-									<p> M Hassaan Shafique</p>
-								</td>
-								<td>AVQ-1993</td>
-								<td>0325111111</td>
-								<td>Route 4</td>
-								<td>12345</td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
-			</div>
-		    </main>
-      </Layout>
-    </div>
-  )
-}
+    const openImageViewer = useCallback((index, img) => {
+        setCurrentImage(index);
+        setImages([img]);
+        setIsViewerOpen(true);
+    }, []);
 
-export default Driver
+    const closeImageViewer = () => {
+        setCurrentImage(0);
+        setIsViewerOpen(false);
+        setImages([]);
+    };
+
+    const defaultURL =
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgc2u0F9JdscSSIM4LH0ca2FLNgVS-vat7LSZKFb73azHEfhVfW7vwnFaq5bidMl1_tsg';
+
+    useEffect(() => {
+        const fetchDriverData = async () => {
+            setLoading(true);
+            const driversData = await appController.getCollectionData(
+                'users_prod'
+            );
+            setDrivers(driversData.filter((r) => r.type === 'Driver'));
+            setLoading(false);
+        };
+        fetchDriverData();
+    }, []);
+
+    return (
+        <div>
+            <Layout>
+                <main>
+                    <div className='table-data'>
+                        <div className='order'>
+                            <div className='head'>
+                                <h3>Registered Drivers</h3>
+                            </div>
+                            {loading ? (
+                                <div className='loadingLoader'>
+                                    <Loader />
+                                </div>
+                            ) : (
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Full Name</th>
+                                            <th>Age</th>
+                                            <th>Email</th>
+                                            <th>Gender</th>
+                                            <th>Phone number</th>
+                                            <th>CNIC</th>
+                                            <th>Vehicle Number</th>
+                                            <th>License</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {drivers.map((r, index) => (
+                                            <tr key={index}>
+                                                <td>
+                                                    <img
+                                                        src={
+                                                            r.url || defaultURL
+                                                        }
+                                                        alt='people'
+                                                    />
+                                                    <p>{r.fullName} </p>
+                                                </td>
+                                                <td>{r.age}</td>
+                                                <td>{r.email}</td>
+                                                <td>{r.gender}</td>
+                                                <td>{r.phoneNumber}</td>
+                                                <td>{r.cnic}</td>
+                                                <td>{r.vehicleNumber}</td>
+                                                <td>
+                                                    {r.licenseUrl && (
+                                                        <img
+                                                            src={r.licenseUrl}
+                                                            onClick={() =>
+                                                                openImageViewer(
+                                                                    0,
+                                                                    r.licenseUrl
+                                                                )
+                                                            }
+                                                            alt='people'
+                                                        />
+                                                    )}
+                                                </td>
+                                            </tr>
+                                        ))}
+                                    </tbody>
+                                </table>
+                            )}
+                        </div>
+                    </div>
+                    {isViewerOpen && (
+                        <ImageViewer
+                            src={images}
+                            currentIndex={currentImage}
+                            disableScroll={false}
+                            closeOnClickOutside={true}
+                            onClose={closeImageViewer}
+                            backgroundStyle={{
+                                backgroundColor: 'rgba(0,0,0,0.5)',
+                            }}
+                        />
+                    )}
+                </main>
+            </Layout>
+        </div>
+    );
+};
+
+export default Driver;
