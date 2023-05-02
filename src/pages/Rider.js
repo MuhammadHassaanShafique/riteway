@@ -15,7 +15,6 @@ const Rider = () => {
             );
             setRiders(ridersData.filter((r) => r.type === 'Rider'));
             setLoading(false);
-            console.log(ridersData);
         };
         fetchRiderData();
     }, []);
