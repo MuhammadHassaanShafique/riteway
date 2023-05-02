@@ -71,9 +71,10 @@ const LoginForm = () => {
                     {errorMessage && <div>{errorMessage}</div>}
                 </form>
             </div>
-            <p>
-                Create an account <NavLink to='/signup'>Sign up</NavLink>
-            </p>
+            {/* <p>
+                Create an account 
+                 <NavLink to='/signup'>Sign up</NavLink>
+            </p> */}
         </div>
     );
 };

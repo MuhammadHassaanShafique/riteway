@@ -11,8 +11,10 @@ const Sidebar = () => {
 	const handleLogout = (e) => {    
 		e.preventDefault();
 		signOut(auth).then(() => {
-			navigate("/");
-			console.log("Signed out successfully")
+			
+            navigate("/");
+			
+            localStorage.removeItem('AccessToken');
 		}).catch((error) => {
 		});
 	}
